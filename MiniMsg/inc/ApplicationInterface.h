@@ -12,11 +12,10 @@
 #ifndef APPLICATIONINTERFACE_H
 #define APPLICATIONINTERFACE_H
 
+static const uint32_t DEFAULT_TICK = 1000; // ms
+
 namespace MiniMsg {
     class ApplicationInterface {
-    protected:
-        uint32_t m_tickPeriod;
-        messageId_t m_msgId;
     public:
         /**
          * @brief main application callback routine
@@ -31,8 +30,9 @@ namespace MiniMsg {
          */
         virtual void on_message(bufferId_t bufferId) = 0;
 
-        messageId_t id() { return m_msgId; }
-        uint32_t tickPeriod() { return m_tickPeriod; }
+        virtual messageId_t id() = 0;
+        //virtual uint32_t tickPeriod() { return DEFAULT_TICK; }
+        virtual uint32_t tickPeriod() = 0;
     };
 };
 

@@ -5,7 +5,7 @@
 
 using namespace MiniMsg;
 
-static const uint32_t TICK_PERIOD = 1000; // ms
+static const uint32_t TICK_PERIOD = 500; // ms
 static const messageId_t MESSAGE_ID = 1; 
 
 Testapp::Testapp()
@@ -27,4 +27,14 @@ void Testapp::tick()
 void Testapp::on_message(bufferId_t bufferId) 
 {
 
+}
+
+uint32_t Testapp::tickPeriod()
+{
+    return m_tickPeriod;
+}
+
+messageId_t Testapp::id()
+{
+    return m_msgId;
 }

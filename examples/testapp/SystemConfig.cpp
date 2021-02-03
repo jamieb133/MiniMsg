@@ -15,11 +15,8 @@
 #include <SystemConfig.h>
 
 using namespace MiniMsg;
-//using namespace MiniMsg::Debug;
 
 SystemConfig* SystemConfig::s_instance;
-
-//extern DebugInterface& get_debugger();
 
 void SystemConfig::create_instance()
 {
