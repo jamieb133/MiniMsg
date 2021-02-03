@@ -4,6 +4,13 @@
 export AVR_ROOT = /Users/jamiebrown/Library/Arduino15/packages/arduino/tools
 export AVR_GCC= $(AVR_ROOT)/avr-gcc/7.3.0-atmel3.6.1-arduino7/bin
 
+#------------------------------------------------------#
+#-------------------flashing tools --------------------#
+#------------------------------------------------------#
+export DEVICE = /dev/cu.usbmodem141101
+export AVRDUDE_CONF = /Users/jamiebrown/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/etc/avrdude.conf
+export BAUDRATE = 115200
+
 export CC = $(AVR_GCC)/avr-gcc
 export CXX = $(AVR_GCC)/avr-g++
 export ASM = $(AVR_GCC)/avr-gcc
@@ -24,13 +31,6 @@ export LDFLAGS = -w -Os -fuse-linker-plugin -Wl,--gc-sections #-flto
 export BOARD_DEFS = -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10607 -DARDUINO_AVR_UNO -DARDUINO_ARCH_AVR
 export EEP_FLAGS = -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0
 export ELF2HEX_FLAGS = -O ihex -R .eeprom
-
-#------------------------------------------------------#
-#-------------------flashing tools --------------------#
-#------------------------------------------------------#
-export DEVICE = /dev/cu.usbmodem141101
-export AVRDUDE_CONF = /Users/jamiebrown/Library/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/etc/avrdude.conf
-export BAUDRATE = 115200
 
 export MINIMSG_DIR = MiniMsg
 export AVRCORE_DIR = ArduinoCore-avr
